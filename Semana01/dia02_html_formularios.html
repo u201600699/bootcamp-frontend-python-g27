@@ -1,27 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML + formularios</title>
-    <link rel="stylesheet"
-     href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-    >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML + Formularios</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+  >
 </head>
 <body>
-    <main class="container">
-        <h1>Formularios + Inputs + validaciones</h1>
-    </main>
+  <main class="container">
+    <h1>Formularios + Inputs + Validaciones</h1>
+
     <form>
-        <h2>Inputs</h2>
-        <label for="text1"> Input tipo texto</label>
-        <input id = "text1" type="text"placeholder= "Ingresa algun texto"/>
+      <h2>Inputs</h2>
 
-        <label >
-            Input Tipo textp
-            <input type="text" placeholder="Ingresa un texto" />
-        </label>
+      <label for="text1">Input tipo texto</label>
+      <input id="text1" type="text" placeholder="Ingresa algún texto" />
+
+      <label>
+        Input Tipo texto
+        <input type="text" placeholder="Ingresa un texto" />
+      </label>
+
+      <label>
+        Input (Solo lectura)
+        <input type="text" placeholder="Input de solo lectura" readonly value="Copia este texto" />
+      </label>
+
+      <label>
+        Input (Desactivar)
+        <input type="text" placeholder="Input desactivado" disabled value="Hola a todos" />
+      </label>
+
+      <label>
+        Input (Number)
+        <input type="number" placeholder="Edad ej: 18" />
+      </label>
+
+      <label>
+        Input (Email)
+        <input type="email" placeholder="Correo ej: correo@mail.com" />
+      </label>
+
+      <label>
+        Input (Rango)
+        <input type="range" min="0" max="100" step="10" value="70" />
+      </label>
+
+      <label>
+        Input (Teléfono)
+        <input type="tel" placeholder="(+51) 999 999 999" />
+      </label>
+
+      <label>
+        Input (Url)
+        <input type="url" placeholder="Siteo web Ej. misitio.com" />
+      </label>
+
+      <label>
+        Input (Password)
+        <input type="password" placeholder="Password" />
+      </label>
+
+      <label>
+        Input (Color)
+        <input type="color" value="#FF00FF" />
+      </label>
+
+      <label>
+        Input (Search)
+        <input type="search" />
+      </label>
+
+      <label>
+        Input (File) - Seleccionar .jpg, uno a la vez
+        <input type="file" accept=".jpg" />
+      </label>
+
+      <label>
+        Input (File) - Seleccionar .pdf, multiples archivos
+        <input type="file" accept=".pdf" multiple />
+      </label>
+
+      <input type="hidden" value="datos-ocultos">
+
+      <input type="submit" value="Guardar" />
+      <input type="reset" value="Limpiar" />
     </form>
-
+  </main>
 </body>
 </html>
