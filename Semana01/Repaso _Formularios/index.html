@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Formularios</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+    <main class="container">
+        <h1> Formularios + input</h1>
+        <form action="">
+
+            <label for="nombres">Nombres y  Apellidos</label>
+            <input type="text" id="nombres" placeholder="Ejemplo: Juan Perez" required>
+            <br/>
+            <label for="Edad">Edad</label>
+            <input type="number" id="Edad" placeholder="Ejemplo: 18" required>
+            <br/>
+            <label for="correo"> Correo electronico</label>
+            <input type="email" id="correo" placeholder="Ejemplo:@gmail.com" required>
+            <br>
+            <label for="contraseña">contraseña</label>
+            <input type="password" id="contraseña" placeholder="Ejemplo: ********" required>
+            <br>
+            <label for="estadocivil"> Estado Civil</label>
+            <select name="estadocivil" id="estadocivil" required>
+                <option selected disabled>--Seleccione--</option>
+                <option value="soltero">Soltero</option>
+                <option value="casado">Casado</option>
+                <option value="divorciado">Divorciado</option>
+                <option value="viudo">Viudo</option>
+            </select>
+            <br>
+            <label>Estado Civil 2</label>
+            <br>
+            <input type="radio" name="estadocivil2" value="soltero" >Soltero
+            <br>
+            <input type="radio" name="estadocivil2" value="casado" >Casado
+            <br>
+            <input type="radio" name="estadocivil2" value="divorciado" >Divorciado
+            <br>
+            <input type="radio" name="estadocivil2" value="viudo" >Viudo
+            <br>
+
+
+        </form>
+    </main>
+</body>
+</html>
