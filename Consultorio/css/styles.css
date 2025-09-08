@@ -273,7 +273,7 @@ img{
     list-style: none;
 }
 .portrait{
-    aspect-ratio:3/4;border-radius:20px;background:url(/Consultorio/images/Dra.jpg) center/cover no-repeat;box-shadow:var(--shadow)
+    aspect-ratio:3/4;border-radius:20px;background:url('../images/Dra.jpg') center/cover no-repeat;box-shadow:var(--shadow)
 }
 
 
