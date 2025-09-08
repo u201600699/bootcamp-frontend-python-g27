@@ -1,0 +1,143 @@
+:root {
+  --bg-1: #fef6e4;
+  --bg-2: #f3d2c1;
+  --bg-3: #8bd3dd;
+  --bg-4: #f582ae;
+  --bg-5: #b082f5;
+
+  /* --sidebarWidth: 300px; */
+}
+
+/* RESET */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* GENERAL */
+
+body {
+  display: grid;
+
+  grid-template-columns: var(--sidebarWidth, 100px) 1fr var(--settingsWidth, 0);
+  grid-template-rows: 60px 1fr;
+
+  height: 100dvh;
+
+  /* Grid Template Areas */
+
+  grid-template-areas:
+    "sidebar header header"
+    "sidebar main settings"
+  ;
+
+  transition: 300ms;
+}
+
+.header {
+  background-color: var(--bg-1);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1.5rem;
+
+  grid-area: header;
+}
+
+.sidebar {
+  background-color: var(--bg-2);
+
+  padding: 1rem;
+
+  grid-area: sidebar;
+}
+
+.header__menu {
+  cursor: pointer;
+}
+
+body:has(.sidebar--open) {
+  --sidebarWidth: 300px;
+}
+
+.settings {
+  background-color: var(--bg-3);
+
+  padding: 1rem;
+
+  grid-area: settings;
+
+  display: none;
+}
+
+.settings--open {
+  display: block;
+}
+
+body:has(.settings--open) {
+  --settingsWidth: 300px;
+}
+
+.main {
+  background-color: var(--bg-4);
+
+  padding: 1rem;
+
+  grid-area: main;
+
+  /* TODO: aplicar grid areas para esta sección */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 2rem;
+}
+
+@media(min-width: 768px) {
+  .main {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    grid-template-areas: 
+      "card1 card2 card3"
+      "card4 card4 card5"
+      "card4 card4 card6"
+    ;
+  }
+
+  .card:nth-child(1) {
+    grid-area: card1;
+  }
+
+  .card:nth-child(2) {
+    grid-area: card2;
+  }
+
+  .card:nth-child(3) {
+    grid-area: card3;
+  }
+
+  .card:nth-child(4) {
+    grid-area: card4;
+  }
+
+  .card:nth-child(5) {
+    grid-area: card5;
+  }
+
+  .card:nth-child(6) {
+    grid-area: card6;
+  }
+}
+
+.card {
+  background-color: var(--bg-5);
+
+  border-radius: .5rem;
+
+  font-size: 2rem;
+  display: grid;
+  place-content: center;
+}

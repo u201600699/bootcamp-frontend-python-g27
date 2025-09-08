@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java sctirpt + DOM: Key Event Listener</title>
+</head>
+<body>
+    <h1>Java sctirpt + DOM: Key Event Listener</h1>
+
+    <main>
+        <h1>JS Key detection</h1>
+        <h2 id="Keycode">00</h2>
+        <h3 id="character">A</h3>
+    </main>
+
+<script>
+    const Key = document.getElementById('Keycode')
+    const character = document.querySelector('#character')
+    //console.log(Key)
+    //Key.textContent = 'HOLA'
+    document.addEventListener('keydown',function(event){
+        console.log('Presionaste una tecla',event)
+        console.log(event.key) //letra
+        console.log(event.keyCode)
+        Key.textContent = event.keyCode
+        character.textContent = event.key
+    })
+</script>
+
+</body>
+</html>

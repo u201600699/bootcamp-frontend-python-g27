@@ -185,5 +185,189 @@ img{
     aspect-ratio: 16/10;
     border-radius: 20px;
     background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;box-shadow:var(--shadow);
-
+}
     /* fin de hero*/
+/* Cards Servicios */
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    
+}
+.card{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card__title{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+.card__desc{
+    margin: 0;
+    color: var(--muted);
+}
+.card__meta{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+  
+
+    
+}
+.chip{
+    background: #eef2ff;
+    color: #3730a3;
+    border: 1px solid #c7d2fe;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.price{
+    font-weight: 800;
+    font-size: 22px;
+}
+.price small{
+    font-weight: 700;
+    opacity: .7;
+}
+.card__btn{
+    margin-top: 8px;
+    align-self: flex-start;
+}
+/*fin de card*/
+/*info doctora*/
+.doctora{
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.doctora__info{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    
+}
+.doctora__name{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+.doctora__list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+    padding-left: 18px;
+    list-style: none;
+}
+.portrait{
+    aspect-ratio:3/4;border-radius:20px;background:url(/Consultorio/images/Dra.jpg) center/cover no-repeat;box-shadow:var(--shadow)
+}
+
+
+/*tabla*/
+.table{
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+
+}
+.table__row{
+  display: grid;  
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  align-items: center;
+}
+.table__row--head{
+    background: #f8fafc;
+    font-weight: 700;
+    border-top: none;
+}
+
+/*footer*/
+.footer{
+    border-top: 1px solid var(--border);
+}
+.footer_grid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 0;
+    color: var(--muted);
+}
+.footer__links{
+    display: flex;
+    gap: 12px;
+}
+.footer__social{
+    display: flex;
+    gap: 14px;
+}
+.footer__social a{
+    color: var(--muted);
+    transition: color .2s;
+}
+.footer__social a:hover{
+    color: var(--primary)
+}
+
+@media (max-width:1024px){
+    .cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:768px){
+    .hero__grid{
+        grid-template-columns: 1fr;
+    }
+    .two-col{
+        grid-template-columns: 1fr;
+    }
+    .cards{
+        grid-template-columns: 1fr;
+    }
+    .btn-menu{
+        display: inline-block;
+    }
+    .menu{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 64px;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        gap: 0;
+        display: none;
+    }
+    .menu.open{
+        display: flex;
+    }
+    .menu a{
+        padding: 12px 16px;
+        border-top: 1px solid #f3f4f6;
+        
+    }
+    .doctora{
+        grid-template-columns: 1fr;
+    }
+    .doctora__list{
+        grid-template-columns: 1fr;
+    }
+}

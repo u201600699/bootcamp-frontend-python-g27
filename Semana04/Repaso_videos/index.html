@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8. Flex-grow y Flex-shrink</title>
+    <style>
+        body{
+
+            margin: 0;
+
+        }
+        .box{
+
+            display: flex;
+            width: 400px;
+        }
+        .box div{
+            background: red;
+            flex-grow: 1;
+        }
+        .box div:first-child{
+            background: yellow;
+            flex-grow: 1;
+        }
+        .box div:last-child{
+            background: yellow;
+            flex-grow: 2;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>8. Flex-grow y Flex-shrink</h1>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+
+   </div>
+    <!-- <div class="shrink">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+
+    </div> -->
+    
+</body>
+</html>

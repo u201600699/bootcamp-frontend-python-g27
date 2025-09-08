@@ -1,0 +1,304 @@
+/* 
+font-family: "Raleway", sans-serif;
+font-family: "Open Sans", sans-serif;
+*/
+
+/*
+  576px  -> pantallas pequeñas (celulares)
+  768px  -> pantallas pequeñas (tablets y celulares)
+  992px  -> pantallas medianas (Desktop)
+  1200px -> pantallas grandes (Desktops, TVs)
+*/
+
+/* GENERAL */
+
+* { /* Selector universal */
+  /* border: 1px solid red; */
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* TODO: Usar el tamaño de fuente con tamaños relativos usando REMs */
+  font-size: 14px;
+}
+
+body {
+  background-color: hsl(217, 28%, 15%);
+  color: hsl(0, 0%, 100%);
+
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  /* TODO: RWD (Responsive Web Design) para imágenes*/
+  max-width: 100%;
+  height: auto;
+}
+
+/* UTILS */
+
+.wrapper {
+  /* Adaptando el ancho de la página a dispositivos móviles y desktops */
+  width: min(100% - 3rem, 1440px); /* 42px = 14px * 3 = 3rem */
+}
+
+/* HEADER SECTION */
+
+.header {
+  /* border: 1px solid red; */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* width: 1000px; */
+
+   /* Centra el elemento con margenes automáticos */
+  margin: 0 auto; /* 0: TOP, BOTTOM / auto: LEFT, RIGHT */
+  margin-top: 3rem; /* 14px * 3 = 42px = 3rem */ 
+}
+
+.header__nav {
+  display: flex;
+  gap: 3rem;
+}
+
+/* HERO SECTION */
+
+.hero {
+  /* border: 1px solid red; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* 14px * 2 = 28px = 2rem */
+
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  /* TODO: Agregar el fondo */
+}
+
+.hero__image {
+  width: min(100% - 3rem, 720px);
+}
+
+.hero__title {
+  /* border: 1px solid red; */
+
+  width: min(100% - 3rem, 720px);
+
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+.hero__text {
+  width: min(100% - 3rem, 720px);
+
+  font-weight: 400;
+  font-size: 1.2rem; /* 14px * 1.2 = 16.8px = 1.2rem */
+  text-align: center;
+}
+
+.hero__button {
+  font-weight: 700;
+
+  border: 0;
+  border-radius: 7rem;
+  padding: 1rem 1.5rem;
+  min-width: 220px;
+  color: hsl(0, 0%, 100%);
+
+  /* https://cssgradient.io/ */
+  background: linear-gradient(90deg,hsl(176, 68%, 64%) 0%, hsl(198, 60%, 50%) 100%);
+}
+
+/* FEATURE SECTION */
+
+.features {
+  /* border: 1px solid red; */
+
+  display: grid;
+  grid-template-columns: 340px;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* NOTA: Este media query se aplica a dispositivos como Destops */
+@media (min-width: 1200px) {
+  .features {
+    grid-template-columns: 340px 340px;
+  }
+}
+
+.feature {
+  /* border: 1px solid red; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feature__title {
+  font-family: "Raleway", sans-serif;
+}
+
+.feature__text {
+  text-align: center;
+}
+
+/* TODO: FONDO DE HERO, RESPONSIVE DE FEATURES EN UNA COLUMNA */
+
+/* COLLABORATION SECTION */
+
+.collaboration {
+  /* border: 1px solid red; */
+
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+
+  /* TODO: Terminar los estilos para esta sección de colaboración */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+@media(min-width: 1200px) {
+  .collaboration {
+    flex-direction: row;
+  }
+}
+
+.how_works {
+  /* border: 1px solid blue; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  width: min(100% - 3rem, 480px);
+}
+
+.how_works__title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+@media (min-width: 1200px) {
+  .how_works__title {
+    font-size: 2.8rem;
+  }
+}
+
+.how_works__text {
+  /* font-family: "Open Sans", sans-serif; */
+}
+
+.how_works__button {
+  color: hsl(176, 68%, 64%);
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  width: 10.8rem;
+  border-bottom: 1px solid hsl(176, 68%, 64%);
+  padding-bottom: 0.5rem;
+}
+
+/* TESTIMONIAL SECTION */
+
+.testimonials {
+  padding-top: 8rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+  .testimonials {
+    flex-direction: row;
+  }
+}
+
+.testimonial {
+  /* padding: TOP RIGHT BOTTOM LEFT */
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  background-color: hsl(219, 30%, 18%);
+  border-radius: 0.5rem;
+
+  width: min(100% - 3rem, 480px);
+
+  position: relative;
+}
+
+/* .testimonial:nth-child(2):before {} */
+/* .testimonial:first-child:before {} */
+/* .testimonial:last-child:after {} */
+
+.testimonial:first-child:before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  z-index: -1;
+
+  display: block;
+  width: 55px;
+  height: 45px;
+
+  background-image: url(images/bg-quotes.png);
+  background-repeat: no-repeat;  
+  background-size: contain;
+}
+
+/* .testimonial::after {
+  content: "adios";
+  display: block;
+  background-color: orange;
+  width: 50px;
+  height: 30px;
+} */
+
+.testimonial__text {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.testimonial__profile {
+  display: flex;
+  gap: 1rem;
+
+  font-size: 0.9rem;
+}
+
+.testimonial__avatar{
+  border-radius: 50%;
+}
+
+.testimonial__user h4 {
+  font-weight: 700;
+}
+
+.testimonial__user h5 {
+  font-weight: 400;
+} 
