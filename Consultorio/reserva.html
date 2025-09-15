@@ -1,12 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservar Cita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Dental Castañeda</title>
 </head>
 <body>
-    <h1> Aca voy a poner para que el usuario llene un formulario con los datos y llege por correo</h1>
-    
+    <!-- Menu superior-->
+    <header class="header">
+        <div class="container nav">
+            <a class="brand" href="index.html">
+                <span class="brand__logo"></span>
+                <span> Dental Castañeda</span>
+            </a>
+            <button id="btn-menu" class="btn-menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <nav id="menu" class="menu"aria-label="Principal">
+                <a href="index.html#servicios" class="menu__link">Servicios</a>
+                <a href="index.html#doctora" class="menu__link">La Doctora</a>
+                <a href="index.html#tarifas" class="menu__link">Tarifas</a>
+                <a href="index.html#ubicacion"  class="menu__link">Ubicación</a>
+                <a href="reserva.html" class="btn btn--primary">Reserva</a>
+            </nav>
+          
+        </div>
+    </header>
+    <main class="section">
+        <div class="container">
+            <h1>Reserva tu cita</h1>
+            <p class="section__subtitle"> Completa el Formulario y confirma tu horario</p>
+              <form id="form-reserva" class=" form form--card">
+                <div class="form__group">
+                    <label for="servicio">Servicio <span class="req">*</span> </label>
+                    <select  id="servicio">
+                        <option value="">Seleccione</option>
+                        <option value="consulta"> Consulta de Evaluación</option>
+                        <option value="limpieza">Limpieza / Profilaxis</option>
+                        <option value="blanqueamiento">Blanqueamiento</option>
+                    </select>
+                    <small class="error" id="err-servicio"> </small>
+                </div>
+                <div class="form__row">
+                    <div class="form__group">
+                        <label for="fecha"> Fecha <span class="req">*</span></label>
+                        <input type="date" id="fecha" required>
+                        <small class="error" id="err-servicio"></small>
+                    </div>
+                
+                 <div class="form__group">
+                    <label for="hora">Hora <span class="req">*</span></label>
+                    <input type="time" id="hora" required />
+                    <small class="error" id="err-hora"></small>
+                 </div>
+
+                </div>
+                  <div class="form__group">
+                    <label for="nombre">Nombre y apellido <span class="req">*</span></label>
+                    <input type="text" id="nombre" placeholder="Tu nombre" required />
+                    <small class="error" id="err-nombre"></small>
+                   </div>
+                   
+                    <div class="form__row">
+                        <div class="form__group">
+                            <label for="telefono">Teléfono (WhatsApp) <span class="req">*</span></label>
+                            <input type="tel" id="telefono" placeholder="51 999 999 999" required />
+                            <small class="error" id="err-telefono"></small>
+                        </div>
+                        <div class="form__group">
+                            <label for="email">Email <span class="req">*</span></label>
+                            <input type="email" id="email" placeholder="tu@correo.com" required />
+                            <small class="error" id="err-email"></small>
+                        </div>
+                    </div>
+                    <div class="form__actions">
+                              <button type="submit" class="btn btn--primary">Confirmar reserva</button>
+                             <a id="btn-whatsapp" class="btn btn--whatsapp" href="#" target="_blank" rel="noreferrer">
+                                WhatsApp
+                             </a>
+                    </div>
+                        
+                    <p id="mensaje" class="msg" role="status" aria-live="polite"></p>
+                
+
+            </form>
+        </div>
+                    <!--FOOTER-->
+    <footer class="footer">
+
+        <div class="container footer_grid">
+         <small>© <span id="year"></span> Dental Castañeda</small> 
+         <div class="footer__links"> 
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+         </div>  
+         <div class="footer__social">
+            <a href="https://facebook.com/tuconsultorio" target="_blank" aria-label="facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54v-2.891h2.54V9.797c0-2.507 1.493-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.261c-1.243 0-1.631.772-1.631 1.562v1.874h2.773l-.443 2.891h-2.33V21.88C18.343 21.128 22 16.991 22 12z"/></svg>
+            </a>
+            <a href="https://instagram.com/tuconsultorio" target="_blank" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.75-2.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0z"/></svg>
+            </a>
+            <a href="https://wa.me/51999999999" target="_blank" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.56 2 2 6.48 2 11.95c0 2.11.55 4.09 1.6 5.86L2 22l4.35-1.57c1.7.93 3.62 1.42 5.69 1.42h.01c5.48 0 10.05-4.48 10.05-9.95S17.52 2 12.04 2zm0 18.18c-1.7 0-3.3-.45-4.72-1.31l-.34-.2-2.58.93.89-2.52-.22-.36A8.07 8.07 0 0 1 4 11.95c0-4.43 3.61-8.03 8.05-8.03s8.05 3.6 8.05 8.03-3.62 8.03-8.06 8.03zm4.38-6.02c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12s-.62.79-.76.95c-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.11-.49.12-.12.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.41-.54-.42-.14-.01-.3-.01-.46-.01s-.42.06-.64.3c-.22.24-.86.84-.86 2.04 0 1.2.88 2.35 1 2.51.12.16 1.72 2.63 4.16 3.69.58.25 1.03.4 1.38.51.58.18 1.11.15 1.53.09.47-.07 1.44-.59 1.64-1.15.2-.56.2-1.04.14-1.15-.06-.11-.22-.18-.46-.3z"/></svg>
+
+         </div>
+        </div>
+
+    </footer>
+        <script src="js/main.js"></script>
+        <script src="js/reserva.js"></script>
+    </main>
 </body>
 </html>

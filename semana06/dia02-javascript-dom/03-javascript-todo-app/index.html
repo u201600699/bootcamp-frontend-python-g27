@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Listado de tareas + JS</title>
+  <style>
+    .checked + span {
+      text-decoration: line-through;
+      color: red;
+    }
+  </style>
 </head>
+
 <body>
   <main class="task">
     <h1>Listado de tareas + JS</h1>
@@ -16,20 +24,24 @@
 
     <ul class="task__list">
       <li>
+        <input type="checkbox" />
         <span>Tarea 1</span>
         <button>Borrar</button>
       </li>
       <li>
+        <input type="checkbox" />
         <span>Tarea 2</span>
         <button>Borrar</button>
       </li>
       <li>
+        <input type="checkbox" />
         <span>Tarea 3</span>
         <button>Borrar</button>
       </li>
     </ul>
   </main>
-  
+
   <script src="main.js"></script>
 </body>
+
 </html>
