@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boleta de Pago – Formato Referencial</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div>
+        <h1 class="header__title">FORMATO REFERENCIAL DE BOLETA DE PAGO DE LA PERSONA TRABAJADORA DEL HOGAR</h1>
+        <p class="header__subtitle">Plantilla editable y lista para imprimir</p>
+      </div>
+      <div class="brand">
+        <div class="brand__name">Persona Empleadora / Empresa</div>
+        <div class="brand__ruc">RUC / DNI: _____________</div>
+      </div>
+    </header>
+
+    <!-- DATOS PERSONA EMPLEADORA -->
+    <section class="block">
+      <h2 class="block__title">Datos de la persona empleadora del hogar</h2>
+      <div class="grid">
+        <div class="col-6">
+          <label>Nombre(s) y apellidos</label>
+          <input class="input" type="text" placeholder="Ej. Juana Pérez" />
+        </div>
+        <div class="col-6">
+          <label>Documento de identidad</label>
+          <div class="inline">
+            <label class="check"><input type="checkbox" /> DNI</label>
+            <label class="check"><input type="checkbox" /> Carné de extranjería</label>
+            <label class="check"><input type="checkbox" /> Otro</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <label>Número</label>
+          <input class="input" type="text" placeholder="Número de documento" />
+        </div>
+        <div class="col-6">
+          <label>Domicilio donde se presta el servicio</label>
+          <input class="input" type="text" placeholder="Dirección" />
+        </div>
+      </div>
+    </section>
+
+    <!-- DATOS PERSONA TRABAJADORA -->
+    <section class="block">
+      <h2 class="block__title">Datos de la persona trabajadora del hogar</h2>
+      <div class="grid">
+        <div class="col-6">
+          <label>Nombre(s) y apellidos</label>
+          <input class="input" type="text" placeholder="Ej. María López" />
+        </div>
+        <div class="col-6">
+          <label>Fecha de ingreso</label>
+          <input class="input" type="date" />
+        </div>
+        <div class="col-6">
+          <label>Documento de identidad</label>
+          <div class="inline">
+            <label class="check"><input type="checkbox" /> DNI</label>
+            <label class="check"><input type="checkbox" /> Carné de extranjería</label>
+            <label class="check"><input type="checkbox" /> Otro</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <label>Número</label>
+          <input class="input" type="text" placeholder="Número de documento" />
+        </div>
+        <div class="col-12">
+          <label>Sistema de Pensiones</label>
+          <div class="inline">
+            <label class="check"><input type="checkbox" /> ONP</label>
+            <label class="check"><input type="checkbox" /> AFP</label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERIODICIDAD -->
+    <section class="block">
+      <h2 class="block__title">Periodicidad del pago de la remuneración</h2>
+      <div class="inline">
+        <label class="check"><input type="checkbox" /> Semanal</label>
+        <label class="check"><input type="checkbox" /> Quincenal</label>
+        <label class="check"><input type="checkbox" /> Mensual</label>
+      </div>
+    </section>
+
+    <!-- PERIODO -->
+    <section class="period">
+      <div>
+        <span class="pill">Periodo: Desde</span>
+        <input class="input" type="date" />
+      </div>
+      <div>
+        <span class="pill">Periodo: Hasta</span>
+        <input class="input" type="date" />
+      </div>
+    </section>
+
+    <!-- CONTROLES ESSALUD -->
+    <section class="block">
+      <h2 class="block__title">Cálculo de Essalud</h2>
+      <div class="inline">
+        <label for="essalud-modo">Modo de cálculo:</label>
+        <select id="essalud-modo" class="input input--compact" style="max-width:220px">
+          <option value="manual" selected>Manual</option>
+          <option value="auto">Automático (9% de Remuneración básica)</option>
+        </select>
+        <label class="check">
+          Tasa (%):
+          <input id="essalud-tasa" class="input input--compact" type="number" step="0.1" min="0" value="9" style="max-width:100px" />
+        </label>
+      </div>
+      <p class="footnote">Si eliges “Automático”, el importe del concepto “Seguro Social de Salud” se ajustará a <strong>tasa %</strong> de la “Remuneración básica”.</p>
+    </section>
+
+    <!-- DETALLE -->
+    <section class="block">
+      <h2 class="block__title">Detalle de ingresos, deducciones y aportes</h2>
+
+      <div class="table-wrap">
+        <table aria-label="Detalle de conceptos" id="tbl-conceptos">
+          <thead>
+            <tr>
+              
+              <th style="width: 31%">Concepto</th>
+              <th style="width: 14%">Tipo</th>
+              <th style="width: 11%">Unidad</th>
+              <th style="width: 11%">Cantidad</th>
+              <th style="width: 21%">Importe (S/)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- INGRESOS -->
+            <tr>
+              
+              <td><input class="input input--concepto" value="Remuneración básica" /></td>
+              <td>
+                <select class="input input--tipo">
+                  <option value="ingreso" selected>Ingreso</option>
+                  <option value="deduccion">Deducción</option>
+                  <option value="aporte">Aporte empleador</option>
+                </select>
+              </td>
+              <td><input class="input input--unidad" placeholder="Mes" /></td>
+              <td><input class="input input--cantidad" type="number" step="1" min="0" value="1" /></td>
+              <td><input class="input input--importe" type="number" step="0.01" min="0" value="0.00" /></td>
+            </tr>
+
+            <tr>
+              
+              <td><input class="input input--concepto" value="Horas extras" /></td>
+              <td>
+                <select class="input input--tipo">
+                  <option value="ingreso" selected>Ingreso</option>
+                  <option value="deduccion">Deducción</option>
+                  <option value="aporte">Aporte empleador</option>
+                </select>
+              </td>
+              <td><input class="input input--unidad" placeholder="Hora" /></td>
+              <td><input class="input input--cantidad" type="number" step="1" min="0" value="0" /></td>
+              <td><input class="input input--importe" type="number" step="0.01" min="0" value="0.00" /></td>
+            </tr>
+
+            <tr>
+              
+              <td><input class="input input--concepto" value="Otros conceptos (bonificaciones)" /></td>
+              <td>
+                <select class="input input--tipo">
+                  <option value="ingreso" selected>Ingreso</option>
+                  <option value="deduccion">Deducción</option>
+                  <option value="aporte">Aporte empleador</option>
+                </select>
+              </td>
+              <td><input class="input input--unidad" placeholder="Mes" /></td>
+              <td><input class="input input--cantidad" type="number" step="1" min="0" value="0" /></td>
+              <td><input class="input input--importe" type="number" step="0.01" min="0" value="0.00" /></td>
+            </tr>
+
+            <!-- DEDUCCIONES -->
+            <tr>
+              
+              <td><input class="input input--concepto" value="Pensiones (AFP/ONP) – retención" /></td>
+              <td>
+                <select class="input input--tipo">
+                  <option value="ingreso">Ingreso</option>
+                  <option value="deduccion" selected>Deducción</option>
+                  <option value="aporte">Aporte empleador</option>
+                </select>
+              </td>
+              <td><input class="input input--unidad" placeholder="Mes" /></td>
+              <td><input class="input input--cantidad" type="number" step="1" min="0" value="1" /></td>
+              <td><input class="input input--importe" type="number" step="0.01" min="0" value="0.00" /></td>
+            </tr>
+
+            <!-- APORTES EMPLEADOR -->
+            <tr data-essalud-row>
+              
+              <td><input class="input input--concepto" value="Seguro Social de Salud (9% referencial)" /></td>
+              <td>
+                <select class="input input--tipo">
+                  <option value="ingreso">Ingreso</option>
+                  <option value="deduccion">Deducción</option>
+                  <option value="aporte" selected>Aporte empleador</option>
+                </select>
+              </td>
+              <td><input class="input input--unidad" placeholder="Mes" /></td>
+              <td><input class="input input--cantidad" type="number" step="1" min="0" value="1" /></td>
+              <td>
+                <input class="input input--importe" type="number" step="0.01" min="0" value="0.00" />
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5">TOTAL INGRESOS</td>
+              <td id="tot-ingresos">0.00</td>
+            </tr>
+            <tr>
+              <td colspan="5">TOTAL DEDUCCIONES</td>
+              <td id="tot-deducciones">0.00</td>
+            </tr>
+            <tr>
+              <td colspan="5">TOTAL APORTES EMPLEADOR</td>
+              <td id="tot-aportes">0.00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="total-box">
+        <div class="total-box__inner">
+          <div class="inline" style="justify-content: space-between;">
+            <strong>Total a pagar (S/)</strong>
+            <strong id="tot-pagar">0.00</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIRMAS -->
+    <section class="block">
+      <div class="grid">
+        <div class="col-4">
+          <label>Fecha de pago</label>
+          <input class="input" type="date" />
+        </div>
+      </div>
+
+      <div class="signatures">
+        <div class="signature">
+          <div class="signature__line">Persona empleadora</div>
+        </div>
+        <div class="signature">
+          <div class="signature__line">Persona trabajadora del hogar</div>
+        </div>
+      </div>
+
+      <p class="footnote">
+        (*) En deducciones se registra el descuento por aportes previsionales (AFP u ONP). (**) En este rubro se pueden incluir conceptos no remunerativos (movilidad, alimentación, etc.). (***) Aporte referencial al seguro de salud a cargo de la persona empleadora. (****) En caso de dificultad para firmar, colocar la huella digital.
+      </p>
+    </section>
+
+    <div class="inline no-print" style="justify-content: flex-end; gap: 8px; margin-top: 12px;">
+      <button class="btn" id="btn-add-row">Añadir fila</button>
+      <button class="btn" id="btn-print">Exportar PDF</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

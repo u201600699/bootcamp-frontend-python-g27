@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD de Películas con json-server</title>
+  <!-- CRUD - CREATE(post) / READ(get) / UPDATE(put/patch) / DELETE(delete) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+  >
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li>
+        <strong>CRUD de Películas con json-server</strong>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="container-fluid">
+    <div class="grid">
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody class="movies__list">
+            <!-- <tr>
+              <td>
+                111
+              </td>
+              <td>
+                <img
+                  src="https://placehold.co/100x150"
+                />
+              </td>
+              <td>
+                <strong>Nombre</strong>
+                <div>
+                  <strong>Release:</strong> 2025-09-25
+                </div>
+                <div>
+                  <strong>Summary:</strong> resumen...
+                </div>
+              </td>
+              <td>
+                <div>
+                  <button>
+                    ✏
+                  </button>
+                  <button>
+                    ❌
+                  </button>
+                </div>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <form id="moviesForm">
+          <h2>Nueva película</h2>
+
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="text" name="image" placeholder="Image" required />
+          <input type="date" name="release" placeholder="Release" required />
+          <select name="genreId" required>
+            <option value="">Select a genre</option>
+            <option value="1">Comedia</option>
+            <option value="2">Acción</option>
+            <option value="3">Animación</option>
+            <option value="4">Aventura</option>
+          </select>
+          <textarea name="summary" placeholder="Summary"></textarea>
+
+          <input type="submit" value="Guardar" />
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- ESM: ECMASCRIPT MODULES - SIrven para separar nuestro código y lo podemos usarlo mediante imports/exports -->
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

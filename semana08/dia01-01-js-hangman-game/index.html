@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Hangman Game + Java Script</title>
+    
+
+</head>
+<body>
+    <main class="ahorcado w-96 border mx-auto mt-4 p-6">
+
+        <h1 class=" ahorcado__titulo text-xl font-medium text-center mb-8">Hangman + Javascript</h1>
+        <!--palabra oculta-->
+        <p class="ahorcado__palabra-oculta text-6xl text-center mb-8">--------</p>
+
+        <section class="ahorcado__botones grid grid-cols-6 gap-4">
+        <!--    <button class="bg-blue-500 p2 text-white font-bold text-xl cursor-pointer
+            hover:bg-blue-600 duration-300 rounded">A</button>
+            <button class="bg-blue-500 p2 text-white font-bold text-xl cursor-pointer
+            hover:bg-blue-600 duration-300 rounded">B</button>
+            <button class="bg-blue-500 p2 text-white font-bold text-xl cursor-pointer
+            hover:bg-blue-600 duration-300 rounded">C</button>
+            <button class="bg-blue-500 p2 text-white font-bold text-xl cursor-pointer
+            hover:bg-blue-600 duration-300 rounded">D</button>
+            <button class="bg-blue-500 p2 text-white font-bold text-xl cursor-pointer
+            hover:bg-blue-600 duration-300 rounded">E</button>
+            <button class="bg-blue-500 p2 text-white font-bold text-xl cursor-pointer
+            hover:bg-blue-600 duration-300 rounded">....</button>
+            <button class="bg-blue-500 p2 text-white font-bold text-xl cursor-pointer
+            hover:bg-blue-600 duration-300 rounded">Z</button>-->
+
+        </section>
+
+        <section class="ahorcado__resultados text-6xl mt-8 text-center font-black hidden">
+            ¡GANASTE!
+        </section>
+        <button class="ahorcado__reiniciar bg-yellow-500 p-2 text-white font-bold  text-xl cursor-pointer hover:bg-yellow-600 duration-300 rounded w-full mt-8 hidden ">
+            ¡Empezar de Nuevo!
+        </button>
+    </main>
+  <script src="main.js"> </script>  
+</body>
+</html>

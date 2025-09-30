@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de imágenes</title>
+</head>
+<body>
+  <h1>Galería de imágenes</h1>
+
+  <img id="galeria" src="https://picsum.photos/id/1/200/300" />
+
+  <div>
+    <button id="anterior">Anterior</button>
+    <button id="siguiente">Siguiente</button>
+  </div>
+
+  <script>
+    const imagenes = [
+      "https://picsum.photos/id/1/200/300",
+      "https://picsum.photos/id/2/200/300",
+      "https://picsum.photos/id/3/200/300",
+      "https://picsum.photos/id/4/200/300",
+      "https://picsum.photos/id/5/200/300",
+    ]
+
+    // const botonAnterior = document.getElementById('anterior')
+    const botonAnterior = document.querySelector('#anterior')
+    const botonSiguiente = document.querySelector('#siguiente')
+    const galeria = document.querySelector('#galeria')
+
+    let index = 0
+
+    botonSiguiente.addEventListener('click', () => {
+      index += 1
+
+      if (index > imagenes.length - 1) {
+        return
+      }
+
+      galeria.src = imagenes[index]
+      console.log('Siguiente', index)
+    })
+
+    // TODO: implementar el evento click del boton anterior
+    botonAnterior.addEventListener('click', () => {
+         console.log('Anterior',index)
+        index -= 1
+          if (index < imagenes.length - 1) {
+        return
+      }
+
+      galeria.src = imagenes[index]
+      console.log('Anterior', index)
+    })
+  </script>
+</body>
+</html>
